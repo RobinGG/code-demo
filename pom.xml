@@ -11,6 +11,7 @@
     <modules>
         <module>mina-demo</module>
         <module>code-demo-common</module>
+        <module>spring-boot-mina-demo</module>
     </modules>
 
 
