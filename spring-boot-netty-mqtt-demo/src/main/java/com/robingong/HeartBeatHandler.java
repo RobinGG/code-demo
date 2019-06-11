@@ -29,6 +29,7 @@ public class HeartBeatHandler extends ChannelInboundHandlerAdapter {
                 MqttConnAckVariableHeader mqttConnAckVariableHeader = new MqttConnAckVariableHeader(MqttConnectReturnCode.CONNECTION_ACCEPTED, false);
                 MqttConnAckMessage response = new MqttConnAckMessage(mqttFixedHeader, mqttConnAckVariableHeader);
                 ctx.writeAndFlush(response).addListener(CLOSE_ON_FAILURE);
+                break;
             case PINGREQ:
                 log.info("HeartBeat received at {}", Instant.now());
                 MqttFixedHeader pingHeader = new MqttFixedHeader(MqttMessageType.PINGRESP, false, AT_MOST_ONCE,
