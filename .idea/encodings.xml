@@ -5,5 +5,6 @@
     <file url="file://$PROJECT_DIR$/spring-boot-moquette-demo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-mqtt-client-demo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-netty-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-netty-mqtt-demo" charset="UTF-8" />
   </component>
 </project>
