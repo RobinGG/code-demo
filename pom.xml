@@ -12,6 +12,8 @@
         <module>mina-demo</module>
         <module>code-demo-common</module>
         <module>spring-boot-mina-demo</module>
+        <module>spring-boot-moquette-demo</module>
+        <module>spring-boot-mqtt-client-demo</module>
     </modules>
 
 
