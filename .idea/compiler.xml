@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="code-demo-common" />
-        <module name="mina-demo" />
-        <module name="spring-boot-mqtt-client-demo" />
         <module name="spring-boot-moquette-demo" />
+        <module name="spring-boot-mqtt-client-demo" />
+        <module name="mina-demo" />
         <module name="spring-boot-mina-demo" />
+        <module name="spring-boot-netty-demo" />
+        <module name="code-demo-common" />
       </profile>
     </annotationProcessing>
   </component>
@@ -19,6 +20,7 @@
       <module name="spring-boot-mina-demo" options="-parameters" />
       <module name="spring-boot-moquette-demo" options="-parameters" />
       <module name="spring-boot-mqtt-client-demo" options="-parameters" />
+      <module name="spring-boot-netty-demo" options="-parameters" />
     </option>
   </component>
 </project>
