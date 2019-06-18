@@ -10,6 +10,7 @@
         <module name="spring-boot-netty-mqtt-demo" />
         <module name="spring-boot-mqtt-client-demo" />
         <module name="mina-demo" />
+        <module name="kotlin-101" />
         <module name="spring-boot-mina-demo" />
         <module name="spring-boot-netty-demo" />
         <module name="code-demo-common" />
