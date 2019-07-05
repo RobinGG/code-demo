@@ -17,6 +17,8 @@
         <module>spring-boot-netty-demo</module>
         <module>spring-boot-netty-mqtt-demo</module>
         <module>kotlin-101</module>
+        <module>netty-mqtt-server-demo</module>
+        <module>netty-mqtt-client-demo</module>
     </modules>
 
 
