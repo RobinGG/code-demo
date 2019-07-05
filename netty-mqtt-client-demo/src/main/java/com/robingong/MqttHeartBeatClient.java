@@ -10,6 +10,7 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.mqtt.MqttDecoder;
 import io.netty.handler.codec.mqtt.MqttEncoder;
 import io.netty.handler.timeout.IdleStateHandler;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.TimeUnit;
 
@@ -17,14 +18,15 @@ import java.util.concurrent.TimeUnit;
  * @author Robin
  * @date 2019/7/5
  */
+@Slf4j
 public class MqttHeartBeatClient {
 
     public static void main(String[] args) throws Exception {
-        EventLoopGroup eventLoopGroup = new NioEventLoopGroup(1);
+        EventLoopGroup workerGroup = new NioEventLoopGroup(1);
 
         try {
             Bootstrap b = new Bootstrap();
-            b.group(eventLoopGroup);
+            b.group(workerGroup);
             b.channel(NioSocketChannel.class);
             b.handler(new ChannelInitializer<SocketChannel>() {
                 protected void initChannel(SocketChannel ch) throws Exception {
@@ -36,13 +38,11 @@ public class MqttHeartBeatClient {
             });
 
             ChannelFuture f = b.connect("127.0.0.1", 1883).sync();
-
+            log.info("Client connected");
             f.channel().closeFuture().sync();
         } finally {
-            eventLoopGroup.shutdownGracefully();
+            workerGroup.shutdownGracefully();
         }
 
     }
-
-
 }

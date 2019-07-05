@@ -11,6 +11,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.mqtt.MqttDecoder;
 import io.netty.handler.codec.mqtt.MqttEncoder;
 import io.netty.handler.timeout.IdleStateHandler;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,8 +19,8 @@ import java.util.concurrent.TimeUnit;
  * @author Robin
  * @date 2019/7/5
  */
+@Slf4j
 public class MqttHeartBeatBroker {
-
 
     public static void main(String[] args) throws Exception {
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
@@ -41,6 +42,7 @@ public class MqttHeartBeatBroker {
             b.childOption(ChannelOption.SO_KEEPALIVE, true);
 
             ChannelFuture f = b.bind(1883).sync();
+            log.info("Broker initiated...");
 
             f.channel().closeFuture().sync();
         } finally {
@@ -48,5 +50,4 @@ public class MqttHeartBeatBroker {
             bossGroup.shutdownGracefully();
         }
     }
-
 }

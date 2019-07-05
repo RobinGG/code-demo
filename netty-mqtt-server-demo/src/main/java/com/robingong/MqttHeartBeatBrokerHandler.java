@@ -1,25 +1,24 @@
 package com.robingong;
 
+import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.codec.mqtt.*;
+import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author Robin
  * @date 2019/7/5
  */
+@Slf4j
 public class MqttHeartBeatBrokerHandler extends ChannelInboundHandlerAdapter {
-
-    @Override
-    public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        System.out.println("Channel active");
-    }
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         MqttMessage mqttMessage = (MqttMessage) msg;
-        System.out.println("Received MQTT message: " + mqttMessage);
+        log.info("Received MQTT message: {}", mqttMessage);
         switch (mqttMessage.fixedHeader().messageType()) {
             case CONNECT:
                 MqttFixedHeader connackFixedHeader = new MqttFixedHeader(MqttMessageType.CONNACK, false, MqttQoS.AT_MOST_ONCE,
@@ -33,21 +32,25 @@ public class MqttHeartBeatBrokerHandler extends ChannelInboundHandlerAdapter {
                 MqttMessage pingResp = new MqttMessage(pingreqFixedHeader);
                 ctx.channel().writeAndFlush(pingResp);
                 break;
+            case DISCONNECT:
+                ctx.channel().close();
+                break;
             default:
-                System.out.println("Unexpected message type: " + mqttMessage.fixedHeader().messageType());
+                log.warn("Unexpected message type: {}", mqttMessage.fixedHeader().messageType());
         }
     }
 
     @Override
     public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
-        System.out.println("Channel heartBeat lost");
-        if (evt instanceof IdleStateEvent) {
+        log.warn("Channel heartBeat lost");
+        if (evt instanceof IdleStateEvent && IdleState.READER_IDLE == ((IdleStateEvent) evt).state()) {
             ctx.channel().close();
         }
     }
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-        cause.printStackTrace();
+        log.error("Caught exception", cause);
+        ctx.channel().close().addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
     }
 }

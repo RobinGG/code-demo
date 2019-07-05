@@ -12,8 +12,6 @@
     <artifactId>kotlin-101</artifactId>
     <packaging>jar</packaging>
 
-    <name>com.robingong kotlin-101</name>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <kotlin.version>1.3.31</kotlin.version>
