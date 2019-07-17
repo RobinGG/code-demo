@@ -6,12 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="spring-boot-moquette-demo" />
         <module name="spring-boot-netty-mqtt-demo" />
         <module name="spring-boot-mqtt-client-demo" />
-        <module name="netty-mqtt-server-demo" />
         <module name="netty-mqtt-client-demo" />
         <module name="mina-demo" />
-        <module name="spring-boot-moquette-demo" />
+        <module name="paho-mqtt-client" />
+        <module name="netty-mqtt-server-demo" />
         <module name="kotlin-101" />
         <module name="spring-boot-mina-demo" />
         <module name="spring-boot-netty-demo" />

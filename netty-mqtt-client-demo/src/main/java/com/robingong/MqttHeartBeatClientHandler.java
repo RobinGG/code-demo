@@ -5,6 +5,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.codec.mqtt.*;
 import io.netty.handler.timeout.IdleStateEvent;
+import io.netty.util.ReferenceCountUtil;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -13,6 +14,11 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class MqttHeartBeatClientHandler extends ChannelInboundHandlerAdapter {
+
+    @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        ReferenceCountUtil.release(msg);
+    }
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
