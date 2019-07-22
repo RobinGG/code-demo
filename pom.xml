@@ -19,6 +19,7 @@
         <module>kotlin-101</module>
         <module>netty-mqtt-server-demo</module>
         <module>netty-mqtt-client-demo</module>
+        <module>cucumber-demo</module>
     </modules>
 
 
