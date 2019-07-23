@@ -10,6 +10,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/netty-mqtt-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-cucumber-demo/pom.xml" />
       </set>
     </option>
   </component>

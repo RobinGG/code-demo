@@ -20,6 +20,7 @@
         <module>netty-mqtt-server-demo</module>
         <module>netty-mqtt-client-demo</module>
         <module>paho-mqtt-client</module>
+        <module>cucumber-demo</module>
     </modules>
 
 
