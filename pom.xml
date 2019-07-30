@@ -21,6 +21,7 @@
         <module>netty-mqtt-client-demo</module>
         <module>paho-mqtt-client</module>
         <module>cucumber-demo</module>
+        <module>spring-boot-ribbon-demo</module>
     </modules>
 
 
