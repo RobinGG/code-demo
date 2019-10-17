@@ -22,6 +22,7 @@
         <module>paho-mqtt-client</module>
         <module>cucumber-demo</module>
         <module>spring-boot-ribbon-demo</module>
+        <module>spring-boot-state-machine-demo</module>
     </modules>
 
 
