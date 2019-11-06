@@ -13,6 +13,7 @@
         <module name="mina-demo" />
         <module name="netty-mqtt-server-demo" />
         <module name="kotlin-101" />
+        <module name="spring-boot-async-demo" />
         <module name="spring-boot-netty-demo" />
         <module name="paho-mqtt-client" />
         <module name="say-hello" />
@@ -36,6 +37,7 @@
       <module name="client" options="-parameters" />
       <module name="say-hello" options="-parameters" />
       <module name="server" options="-parameters" />
+      <module name="spring-boot-async-demo" options="-parameters" />
       <module name="spring-boot-mina-demo" options="-parameters" />
       <module name="spring-boot-moquette-demo" options="-parameters" />
       <module name="spring-boot-mqtt-client-demo" options="-parameters" />

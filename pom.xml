@@ -24,6 +24,7 @@
         <module>spring-boot-ribbon-demo</module>
         <module>spring-boot-state-machine-demo</module>
         <module>spring-boot-rabbit-demo</module>
+        <module>spring-boot-async-demo</module>
     </modules>
 
 
