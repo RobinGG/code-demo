@@ -8,5 +8,10 @@
     <file url="file://$PROJECT_DIR$/spring-boot-mqtt-client-demo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-netty-demo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-netty-mqtt-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-rabbit-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-ribbon-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-ribbon-demo/say-hello" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-ribbon-demo/user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-state-machine-demo" charset="UTF-8" />
   </component>
 </project>
